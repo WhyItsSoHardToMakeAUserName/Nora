@@ -5,6 +5,9 @@
   "references": [
     {
       "path": "./apps/nora-server"
+    },
+    {
+      "path": "./packages/common"
     }
   ]
 }

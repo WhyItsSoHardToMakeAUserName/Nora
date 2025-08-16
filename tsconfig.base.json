@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@nora/common":["packages/common/src/index.js"]
+    },
     "composite": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,

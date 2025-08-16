@@ -10,7 +10,7 @@ const swcJestConfig = JSON.parse(
 swcJestConfig.swcrc = false;
 
 export default {
-  displayName: '@nora/nora-server',
+  displayName: '@nora/common',
   preset: '../../jest.preset.js',
   testEnvironment: 'node',
   transform: {
