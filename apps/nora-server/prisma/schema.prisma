@@ -1,0 +1,66 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum TaskStatus {
+  TODO
+  DONE
+}
+
+enum WeekDay {
+  Monday
+  Tuesday
+  Wednesday
+  Thursday
+  Friday
+  Saturday
+  Sunday
+}
+
+enum Importance {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+model User {
+  id       String  @id @default(uuid())
+  email    String  @unique
+  password String
+  tasks    Task[]  @relation("UserTasks")
+  habits   Habit[] @relation("UserHabits")
+}
+
+model Task {
+  id           BigInt      @id @default(autoincrement())
+  userId       String
+  name         String
+  description  String?
+  status       TaskStatus  @default(TODO)
+  repeat_days  WeekDay[]
+  importance   Importance?
+  start_time   DateTime?
+  end_time     DateTime?
+  time_created DateTime    @default(now())
+  user         User        @relation(fields: [userId], references: [id], name: "UserTasks")
+}
+
+model Habit {
+  id          BigInt @id @default(autoincrement())
+  userId      String
+  name        String
+  current_day Int
+  user        User   @relation(fields: [userId], references: [id], name: "UserHabits")
+}
