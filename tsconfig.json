@@ -4,6 +4,9 @@
   "files": [],
   "references": [
     {
+      "path": "./packages/db-prisma"
+    },
+    {
       "path": "./apps/nora-server"
     },
     {
