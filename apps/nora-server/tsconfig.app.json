@@ -8,9 +8,20 @@
     ],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "target": "es2021"
+    "target": "es2021",
+    "rootDir": "../../"
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "../../packages/common/src/**/*.ts",
+    "../../packages/db-prisma/src/**/*.ts"
+  ],
+  "exclude": [
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "../../packages/common/src/**/*.spec.ts",
+    "../../packages/common/src/**/*.test.ts",
+    "../../packages/db-prisma/src/**/*.spec.ts",
+    "../../packages/db-prisma/src/**/*.test.ts"
   ]
 }

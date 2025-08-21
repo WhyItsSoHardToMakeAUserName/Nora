@@ -1,16 +1,6 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-  Query,
-} from '@nestjs/common';
+import { Controller, Param, Delete } from '@nestjs/common';
 import { TaskService } from './task.service';
 // import { CreateTaskDto, UpdateTaskDto } from '@nora/common';
-import { common } from '@nora/common';
 
 @Controller('task')
 export class TaskController {
@@ -21,16 +11,16 @@ export class TaskController {
   //   return this.taskService.createTask(createTaskDto);
   // }
 
-  @Get()
-  findAll(@Query('userId') userId: string) {
-    common();
-    return this.taskService.tasks({ userId });
-  }
+  // @Get()
+  // findAll(@Query('userId') userId: string) {
+  //   common();
+  //   return this.taskService.tasks({ userId });
+  // }
 
-  @Get(':id')
-  findOne(@Param('id') id: number) {
-    return this.taskService.getTask(id);
-  }
+  // @Get(':id')
+  // findOne(@Param('id') id: number) {
+  //   return this.taskService.getTask(id);
+  // }
 
   // @Patch(':id')
   // update(@Param('id') id: number, @Body() updateTaskDto: UpdateTaskDto) {

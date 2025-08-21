@@ -5,6 +5,12 @@
   "references": [
     {
       "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "../../packages/common"
+    },
+    {
+      "path": "../../packages/db-prisma"
     }
   ],
   "compilerOptions": {

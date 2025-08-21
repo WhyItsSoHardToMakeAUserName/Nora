@@ -1,22 +1,23 @@
 import { Injectable } from '@nestjs/common';
 import { common } from '@nora/common';
 
-import { Prisma, PrismaService, Task } from '@nora/db-prisma';
+import { PrismaService } from '@nora/db-prisma';
+
 @Injectable()
 export class TaskService {
   constructor(private prisma: PrismaService) {}
 
-  async createTask(): Promise<Task> {
+  async createTask(): Promise<void> {
     common();
   }
 
-  async tasks(where: Prisma.TaskWhereInput): Promise<Task[]> {
-    return this.prisma.task.findMany({ where });
-  }
+  // async tasks(where: Prisma.TaskWhereInput): Promise<Task[]> {
+  //   return this.prisma.task.findMany({ where });
+  // }
 
-  async getTask(id: number): Promise<Task | null> {
-    return this.prisma.task.findFirst({ where: { id } });
-  }
+  // async getTask(id: number): Promise<Task | null> {
+  //   return this.prisma.task.findFirst({ where: { id } });
+  // }
 
   // async updateTask(data: UpdateTaskDto, where: Prisma.TaskWhereUniqueInput) {
   //   return this.prisma.task.update({

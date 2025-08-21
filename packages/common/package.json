@@ -5,6 +5,9 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "nest build"
+  },
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -36,6 +39,7 @@
     "@swc/helpers": "~0.5.11"
   },
   "devDependencies": {
-    "@nx/nest": "21.4.0"
+    "@nx/nest": "21.4.0",
+    "nx": "21.4.0"
   }
 }
