@@ -4,13 +4,25 @@
   "files": [],
   "references": [
     {
+      "path": "./packages/common"
+    },
+    {
       "path": "./packages/db-prisma"
     },
     {
       "path": "./apps/nora-server"
     },
-    {
-      "path": "./packages/common"
-    }
-  ]
+    
+
+  ],
+  "compilerOptions": {
+        "paths": {
+      "@nora/common": [
+        "packages/common/src/index.ts"
+      ],
+      "@nora/db-prisma": [
+        "packages/db-prisma/src/index.ts"
+      ]
+    },
+  }
 }

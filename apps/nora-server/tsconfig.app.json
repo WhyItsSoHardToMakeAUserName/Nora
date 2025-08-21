@@ -5,15 +5,15 @@
     "types": [
       "node"
     ],
-    "rootDir": "../../",
+    "rootDir": "src",
     "tsBuildInfoFile": "dist/tsconfig.app.tsbuildinfo",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "target": "es2021"
-  },
+    "target": "es2021",
+    },
   "include": [
     "src/**/*.ts",
-    "../../packages/common/src/index.ts"
+    "../../packages/common/**/*.ts",
   ],
   "exclude": [
     "out-tsc",
@@ -24,5 +24,13 @@
     "eslint.config.js",
     "eslint.config.cjs",
     "eslint.config.mjs"
-  ]
+  ],
+  "references": [
+    {
+      "path": "../../packages/db-prisma/tsconfig.lib.json"
+    },
+    {
+      "path": "../../packages/common/tsconfig.lib.json"
+    }
+  ],
 }
