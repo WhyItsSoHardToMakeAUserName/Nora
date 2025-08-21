@@ -34,5 +34,8 @@
   },
   "dependencies": {
     "@swc/helpers": "~0.5.11"
+  },
+  "devDependencies": {
+    "@nx/nest": "21.4.0"
   }
 }

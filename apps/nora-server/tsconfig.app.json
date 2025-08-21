@@ -1,36 +1,16 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "../../dist/out-tsc",
+    "module": "nodenext",
     "types": [
       "node"
     ],
-    "rootDir": "src",
-    "tsBuildInfoFile": "dist/tsconfig.app.tsbuildinfo",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "target": "es2021",
-    },
+    "target": "es2021"
+  },
   "include": [
-    "src/**/*.ts",
-    "../../packages/common/**/*.ts",
-  ],
-  "exclude": [
-    "out-tsc",
-    "dist",
-    "jest.config.ts",
-    "src/**/*.spec.ts",
-    "src/**/*.test.ts",
-    "eslint.config.js",
-    "eslint.config.cjs",
-    "eslint.config.mjs"
-  ],
-  "references": [
-    {
-      "path": "../../packages/db-prisma/tsconfig.lib.json"
-    },
-    {
-      "path": "../../packages/common/tsconfig.lib.json"
-    }
-  ],
+    "src/**/*.ts"
+  ]
 }
