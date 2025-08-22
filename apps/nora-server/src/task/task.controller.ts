@@ -9,21 +9,19 @@ import {
   Query,
 } from '@nestjs/common';
 import { TaskService } from './task.service';
-// import { CreateTaskDto, UpdateTaskDto } from '@nora/common';
-import { common } from '@nora/common';
+import { CreateTaskDto, UpdateTaskDto } from '@nora/common';
 
 @Controller('task')
 export class TaskController {
   constructor(private readonly taskService: TaskService) {}
 
-  // @Post()
-  // create(@Body() createTaskDto: CreateTaskDto) {
-  //   return this.taskService.createTask(createTaskDto);
-  // }
+  @Post()
+  create(@Body() createTaskDto: CreateTaskDto) {
+    return this.taskService.createTask(createTaskDto);
+  }
 
   @Get()
   findAll(@Query('userId') userId: string) {
-    common();
     return this.taskService.tasks({ userId });
   }
 
@@ -32,10 +30,10 @@ export class TaskController {
     return this.taskService.getTask(id);
   }
 
-  // @Patch(':id')
-  // update(@Param('id') id: number, @Body() updateTaskDto: UpdateTaskDto) {
-  //   return this.taskService.updateTask(updateTaskDto, { id });
-  // }
+  @Patch(':id')
+  update(@Param('id') id: number, @Body() updateTaskDto: UpdateTaskDto) {
+    return this.taskService.updateTask(updateTaskDto, { id });
+  }
 
   @Delete(':id')
   remove(@Param('id') id: number) {
