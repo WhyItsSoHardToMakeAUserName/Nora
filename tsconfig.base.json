@@ -7,7 +7,6 @@
       ],
       "@nora/db-prisma": [
         "packages/db-prisma/src/index.ts",
-        "packages/db-prisma/node_modules/.prisma/client/index.d.ts"
       ]
     },
     "composite": true,
