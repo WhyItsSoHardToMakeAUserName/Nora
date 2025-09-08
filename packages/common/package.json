@@ -33,6 +33,8 @@
     }
   },
   "dependencies": {
-    "@swc/helpers": "~0.5.11"
+    "@swc/helpers": "~0.5.11",
+    "class-validator": "0.14.2",
+    "class-transformer": "0.5.1"
   }
 }

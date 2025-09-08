@@ -1,1 +1,1 @@
-export * from './lib/consts/index.js';
+export * from './lib/index';

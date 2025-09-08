@@ -1,1 +1,1 @@
-export * from './week-days.js'
+export * from './week-days.js';
