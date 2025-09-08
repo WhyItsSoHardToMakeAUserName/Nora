@@ -18,7 +18,7 @@ CREATE TABLE "public"."User" (
 
 -- CreateTable
 CREATE TABLE "public"."Task" (
-    "id" BIGSERIAL NOT NULL,
+    "id" SERIAL NOT NULL,
     "userId" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "description" TEXT,
@@ -34,7 +34,7 @@ CREATE TABLE "public"."Task" (
 
 -- CreateTable
 CREATE TABLE "public"."Habit" (
-    "id" BIGSERIAL NOT NULL,
+    "id" SERIAL NOT NULL,
     "userId" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "current_day" INTEGER NOT NULL,
