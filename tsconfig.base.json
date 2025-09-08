@@ -1,6 +1,14 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "paths": {
+      "@nora/common": [
+        "packages/common/src/index.ts"
+      ],
+      "@nora/db-prisma": [
+        "packages/db-prisma/src/index.ts"
+      ]
+    },
     "composite": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,

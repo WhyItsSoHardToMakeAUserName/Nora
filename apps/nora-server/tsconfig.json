@@ -4,6 +4,12 @@
   "include": [],
   "references": [
     {
+      "path": "../../packages/db-prisma"
+    },
+    {
+      "path": "../../packages/common"
+    },
+    {
       "path": "./tsconfig.app.json"
     },
     {
