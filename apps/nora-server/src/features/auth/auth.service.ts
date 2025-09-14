@@ -2,10 +2,14 @@ import { Injectable } from '@nestjs/common';
 import { UserService } from '../user/user.service';
 import { LoginDto, RegisterDto } from 'packages/common/src/lib/dtos/user';
 import { compare } from 'bcryptjs';
+import { MailSenderService } from '../mail-sender/mail-sender.service';
 
 @Injectable()
 export class AuthService {
-  constructor(private readonly userService: UserService) {}
+  constructor(
+    private readonly userService: UserService,
+    private readonly mailSender: MailSenderService
+  ) {}
   async register(user: RegisterDto) {
     this.userService.createUser(user);
     return;
@@ -17,5 +21,12 @@ export class AuthService {
     if (!User) throw new Error('User not found');
 
     return compare(user.password, User.password);
+  }
+
+  async sendOTP(email: string) {
+    this.mailSender.sendEmail({
+      to: email,
+      ...(await this.mailSender.oneTimePasscodeEmailOptions('9264')),
+    });
   }
 }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            color: #403E3E;
+            font-weight: 400;
+            font-family: Poppins, sans-serif;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <table style="
+        border-radius: 30px;
+        width: 30em;
+        height: 40em;
+        border: 2px solid #403E3E;
+        text-align: center;
+        margin: auto;">
+        {{> (lookup . 'partialBody')}}
+    </table>
+</body>
+</html>

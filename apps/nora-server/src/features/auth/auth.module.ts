@@ -4,6 +4,7 @@ import { AuthController } from './auth.controller';
 import { JwtModule } from '@nestjs/jwt';
 import { authConfig, IAuthConfig } from '../../configs/auth.config';
 import { UserModule } from '../user/user.module';
+import { MailSenderModule } from '../mail-sender/mail-sender.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { UserModule } from '../user/user.module';
     //     }),
     //     // inject: [authConfig.KEY],
     //   }),
+    MailSenderModule,
   ],
   controllers: [AuthController],
   providers: [AuthService],

@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Param, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginDto, RegisterDto } from '@nora/common';
 
@@ -13,5 +13,10 @@ export class AuthController {
   @Post('login')
   login(@Body() user: LoginDto) {
     return this.authService.login(user);
+  }
+
+  @Post('otp/:email')
+  sendOTP(@Param('email') email: string) {
+    return this.authService.sendOTP(email);
   }
 }
