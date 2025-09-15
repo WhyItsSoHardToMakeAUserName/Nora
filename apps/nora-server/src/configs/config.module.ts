@@ -2,8 +2,9 @@ import { DynamicModule, Module } from '@nestjs/common';
 import { authConfig } from './auth.config';
 import { ConfigModule as BaseConfigModule } from '@nestjs/config';
 import { mailConfig } from './mail.config';
+import { cacheConfig } from './cache.config';
 
-const configurations = [authConfig, mailConfig];
+const configurations = [authConfig, mailConfig, cacheConfig];
 
 @Module({})
 export class ConfigModule {
