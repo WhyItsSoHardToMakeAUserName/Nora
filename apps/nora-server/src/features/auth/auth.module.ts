@@ -10,13 +10,13 @@ import { CacheModule } from '../../cache/cache.module';
 @Module({
   imports: [
     UserModule,
-    //   JwtModule.registerAsync({
-    //     useFactory: () => ({
-    //       secret: 'secret',
-    //       // signOptions: { expiresIn: config.jwt.expiresIn },
-    //     }),
-    //     // inject: [authConfig.KEY],
-    //   }),
+    JwtModule.registerAsync({
+      useFactory: (config: IAuthConfig) => ({
+        secret: config.jwt.secret,
+        signOptions: { expiresIn: config.jwt.expiresIn },
+      }),
+      inject: [authConfig.KEY],
+    }),
     MailSenderModule,
     CacheModule,
   ],

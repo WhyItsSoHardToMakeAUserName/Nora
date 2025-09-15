@@ -5,4 +5,10 @@ export class LoginDto {
 
 export class RegisterDto extends LoginDto {
   name!: string;
+  otp!: string;
+}
+
+export interface JwtPayload {
+  email: string;
+  name: string;
 }
