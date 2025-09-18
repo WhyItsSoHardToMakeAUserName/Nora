@@ -1,4 +1,5 @@
 {
+  "neverConnectToCloud": true,
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
     "default": [
@@ -19,7 +20,6 @@
       "{workspaceRoot}/.github/workflows/ci.yml"
     ]
   },
-  "nxCloudId": "689c05f235926c7bd3f832a5",
   "plugins": [
     {
       "plugin": "@nx/js/typescript",
