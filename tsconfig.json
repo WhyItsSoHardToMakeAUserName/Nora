@@ -12,17 +12,18 @@
     {
       "path": "./apps/nora-server"
     },
-    
-
+    {
+      "path": "./apps/nora-client"
+    }
   ],
   "compilerOptions": {
-        "paths": {
+    "paths": {
       "@nora/common": [
         "packages/common/src/index.ts"
       ],
       "@nora/db-prisma": [
         "packages/db-prisma/src/index.ts"
       ]
-    },
+    }
   }
 }
